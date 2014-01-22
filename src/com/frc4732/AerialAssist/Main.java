@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import com.frc4732.AerialAssist.commands.CommandBase;
 import com.frc4732.AerialAssist.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Victor;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +27,10 @@ import com.frc4732.AerialAssist.commands.ExampleCommand;
 public class Main extends IterativeRobot {
 
     Command autonomousCommand;
+    
+    RobotDrive driveTrain;
+    Victor leftMotor;
+    Victor rightMotor;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -36,7 +42,12 @@ public class Main extends IterativeRobot {
 
         // Initialize all subsystems
         CommandBase.init();
-    }
+        
+        leftMotor = new Victor(RobotMap.LEFT_MOTOR);
+        rightMotor = new Victor(RobotMap.RIGHT_MOTOR);
+        
+        driveTrain = new RobotDrive(leftMotor, rightMotor);
+   }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
@@ -48,6 +59,8 @@ public class Main extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        
+        
     }
 
     public void teleopInit() {
@@ -63,6 +76,8 @@ public class Main extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        driveTrain.arcadeDrive(stick1);
     }
     
     /**
