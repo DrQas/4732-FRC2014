@@ -3,6 +3,7 @@ package com.frc4732.AerialAssist.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.frc4732.AerialAssist.OI;
+import com.frc4732.AerialAssist.subsystems.DriveTrain;
 import com.frc4732.AerialAssist.subsystems.ExampleSubsystem;
 
 /**
@@ -15,7 +16,7 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     // Create a single static instance of all of your subsystems
-    public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    public static DriveTrain driveTrain = new DriveTrain();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
@@ -26,7 +27,7 @@ public abstract class CommandBase extends Command {
         oi = new OI();
 
         // Show what command your subsystem is running on the SmartDashboard
-        SmartDashboard.putData(exampleSubsystem);
+        SmartDashboard.putData(driveTrain);
     }
 
     public CommandBase(String name) {
