@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.frc4732.AerialAssist.OI;
 import com.frc4732.AerialAssist.subsystems.DriveTrain;
-import com.frc4732.AerialAssist.subsystems.ExampleSubsystem;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
