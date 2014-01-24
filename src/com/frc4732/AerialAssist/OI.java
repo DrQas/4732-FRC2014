@@ -12,8 +12,16 @@ import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
  */
 public class OI {
     
-    Joystick stick1 = new Joystick(RobotMap.JOYSTICK_1);
-    Joystick stick2 = new Joystick(RobotMap.JOYSTICK_2);
+    Joystick driveController = new Joystick(RobotMap.DRIVE_CONTROLLER);
+    Joystick altController = new Joystick(RobotMap.ALT_CONTROLLER);
+    
+    public double getMoveAxis() {
+        return driveController.getRawAxis(RobotMap.XBOX_CONTROLLER.LEFT_STICK_Y);
+    }
+    
+    public double getRotateAxis() {
+        return driveController.getRawAxis(RobotMap.XBOX_CONTROLLER.RIGHT_STICK_X);
+    }
    
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
