@@ -17,8 +17,8 @@ public class RobotMap {
         public static final int LEFT_STICK_X = 1;
         public static final int LEFT_STICK_Y = 2;
         public static final int LEFT_STICK_BUTTON = 9;
-        
-        public static final int D_PAD_X = 6;
+         
+       public static final int D_PAD_X = 6;
         
         public static final int SELECT = 7;
         public static final int START = 8;
