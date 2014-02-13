@@ -5,6 +5,9 @@
  */
 package com.frc4732.AerialAssist.commands;
 
+import com.frc4732.AerialAssist.RobotMap;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author qasim
@@ -22,7 +25,31 @@ public class OperatorDrive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        driveTrain.arcadeDrive(oi.getMoveAxis(), oi.getRotateAxis());
+        double moveAxis = oi.getMoveAxis(), rotateAxis = oi.getRotateAxis();
+        
+        if(Math.abs(moveAxis) >= 0.02 || Math.abs(rotateAxis) >= 0.02) {
+        
+            if(!oi.isHeld(RobotMap.XBOX_CONTROLLER.LEFT_STICK_BUTTON)) {
+                moveAxis *= 0.77;
+            }
+            
+            if(!oi.isHeld(RobotMap.XBOX_CONTROLLER.RIGHT_STICK_BUTTON)) {
+                rotateAxis *= 0.77;
+            }
+            
+            if(oi.isHeld(RobotMap.XBOX_CONTROLLER.L_BUTTON)) {
+                moveAxis *= -1;
+                moveAxis *= 0.5;
+                rotateAxis *= 0.6;
+            }
+
+            driveTrain.arcadeDrive((Math.abs(moveAxis) >= 0.02) ? moveAxis : 0, 
+                    (Math.abs(rotateAxis) >= 0.02) ? rotateAxis : 0);
+            
+        }
+        
+        SmartDashboard.putNumber("Move Axis", moveAxis);
+        SmartDashboard.putNumber("Rotate Axis", rotateAxis);
     }
 
     // Make this return true when this Command no longer needs to run execute()
