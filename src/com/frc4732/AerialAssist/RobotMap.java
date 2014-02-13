@@ -13,7 +13,7 @@ public class RobotMap {
     public static final int DRIVE_CONTROLLER = 1;
     public static final int ALT_CONTROLLER = 2;
     
-    class XBOX_CONTROLLER {
+    public class XBOX_CONTROLLER {
         public static final int LEFT_STICK_X = 1;
         public static final int LEFT_STICK_Y = 2;
         public static final int LEFT_STICK_BUTTON = 9;
