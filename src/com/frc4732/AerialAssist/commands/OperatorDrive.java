@@ -30,11 +30,11 @@ public class OperatorDrive extends CommandBase {
         if(Math.abs(moveAxis) >= 0.02 || Math.abs(rotateAxis) >= 0.02) {
         
             if(!oi.isHeld(RobotMap.XBOX_CONTROLLER.LEFT_STICK_BUTTON)) {
-                moveAxis *= 0.77;
+                moveAxis *= 0.75;
             }
             
             if(!oi.isHeld(RobotMap.XBOX_CONTROLLER.RIGHT_STICK_BUTTON)) {
-                rotateAxis *= 0.77;
+                rotateAxis *= 0.75;
             }
             
             if(oi.isHeld(RobotMap.XBOX_CONTROLLER.L_BUTTON)) {
