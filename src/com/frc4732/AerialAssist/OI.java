@@ -4,6 +4,7 @@ package com.frc4732.AerialAssist;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -21,6 +22,11 @@ public class OI {
     public double getRotateAxis() {
         return driveController.getRawAxis(RobotMap.XBOX_CONTROLLER.RIGHT_STICK_X);
     }
+    
+    public boolean isHeld(int button) {
+        return driveController.getRawButton(button);
+    }
+    
    
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
