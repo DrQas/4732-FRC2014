@@ -44,4 +44,11 @@ public class RobotMap {
         public static final int DIGITAL_IO = 1;
         public static final int RELAY = 1;
     }
+    
+    public class DIRECTION {
+        public static final int LEFT = 0;
+        public static final int RIGHT = 1;
+        public static final int FORWARD = 2;
+        public static final int BACKWARD = 3;
+    }
 }
