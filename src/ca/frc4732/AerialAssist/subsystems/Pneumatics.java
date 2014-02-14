@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.frc4732.AerialAssist.subsystems;
+package ca.frc4732.AerialAssist.subsystems;
 
-import com.frc4732.AerialAssist.commands.RunCompressor;
+import ca.frc4732.AerialAssist.RobotMap;
+import ca.frc4732.AerialAssist.commands.RunCompressor;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -22,7 +23,8 @@ public class Pneumatics extends Subsystem {
     Solenoid s1;
     
     public Pneumatics() {
-        compressor = new Compressor(1, 1); //Digital IO, Relay
+        compressor = new Compressor(
+                RobotMap.COMPRESSOR.DIGITAL_IO, RobotMap.COMPRESSOR.RELAY);
     }
 
     public void initDefaultCommand() {

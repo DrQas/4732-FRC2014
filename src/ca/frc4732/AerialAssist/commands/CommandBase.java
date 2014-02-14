@@ -1,10 +1,10 @@
-package com.frc4732.AerialAssist.commands;
+package ca.frc4732.AerialAssist.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import com.frc4732.AerialAssist.OI;
-import com.frc4732.AerialAssist.subsystems.DriveTrain;
-import com.frc4732.AerialAssist.subsystems.Pneumatics;
+import ca.frc4732.AerialAssist.OI;
+import ca.frc4732.AerialAssist.subsystems.DriveTrain;
+import ca.frc4732.AerialAssist.subsystems.Pneumatics;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.

@@ -1,5 +1,5 @@
 
-package com.frc4732.AerialAssist;
+package ca.frc4732.AerialAssist;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;

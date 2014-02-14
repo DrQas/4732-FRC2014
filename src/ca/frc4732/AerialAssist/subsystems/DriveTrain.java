@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.frc4732.AerialAssist.subsystems;
+package ca.frc4732.AerialAssist.subsystems;
 
-import com.frc4732.AerialAssist.RobotMap;
-import com.frc4732.AerialAssist.commands.OperatorDrive;
-import edu.wpi.first.wpilibj.GenericHID;
+import ca.frc4732.AerialAssist.RobotMap;
+import ca.frc4732.AerialAssist.commands.OperatorDrive;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;

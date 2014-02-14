@@ -1,4 +1,4 @@
-package com.frc4732.AerialAssist;
+package ca.frc4732.AerialAssist;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -9,6 +9,8 @@ package com.frc4732.AerialAssist;
 public class RobotMap {
     public static final int LEFT_MOTOR = 1;
     public static final int RIGHT_MOTOR = 2;
+    
+    public static final int WINCH_MOTOR = 3;
     
     public static final int DRIVE_CONTROLLER = 1;
     public static final int ALT_CONTROLLER = 2;
@@ -36,5 +38,10 @@ public class RobotMap {
         public static final int R_BUTTON = 6;
         
         public static final int TRIGGER_AXIS = 3;
+    }
+    
+    public class COMPRESSOR {
+        public static final int DIGITAL_IO = 1;
+        public static final int RELAY = 1;
     }
 }

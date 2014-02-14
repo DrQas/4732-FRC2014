@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.frc4732.AerialAssist.commands;
+package ca.frc4732.AerialAssist.commands;
 
-import com.frc4732.AerialAssist.RobotMap;
+import ca.frc4732.AerialAssist.RobotMap;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
