@@ -1,9 +1,9 @@
 
 package ca.frc4732.AerialAssist;
 
+import ca.frc4732.AerialAssist.commands.SetSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
@@ -12,8 +12,23 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
     
-    Joystick driveController = new Joystick(RobotMap.DRIVE_CONTROLLER);
-    Joystick altController = new Joystick(RobotMap.ALT_CONTROLLER);
+    public Joystick driveController = new Joystick(RobotMap.DRIVE_CONTROLLER);
+    public Joystick altController = new Joystick(RobotMap.ALT_CONTROLLER);
+    
+    public Button driveControllerX = new JoystickButton(
+            driveController, RobotMap.XBOX_CONTROLLER.X);
+    public Button driveControllerY = new JoystickButton(
+            driveController, RobotMap.XBOX_CONTROLLER.Y);
+    public Button driveControllerA = new JoystickButton(
+            driveController, RobotMap.XBOX_CONTROLLER.A);
+    public Button driveControllerB = new JoystickButton(
+            driveController, RobotMap.XBOX_CONTROLLER.B);
+    
+    public Button driveControllerSelect = new JoystickButton(driveController, 
+            RobotMap.XBOX_CONTROLLER.SELECT);
+    
+    public Button driveControllerStart = new JoystickButton(driveController, 
+            RobotMap.XBOX_CONTROLLER.START);
     
     public double getMoveAxis() {
         return driveController.getRawAxis(RobotMap.XBOX_CONTROLLER.LEFT_STICK_Y);
@@ -26,7 +41,6 @@ public class OI {
     public boolean isHeld(int button) {
         return driveController.getRawButton(button);
     }
-    
    
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
