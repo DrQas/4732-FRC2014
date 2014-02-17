@@ -5,7 +5,7 @@
  */
 package ca.frc4732.AerialAssist.subsystems;
 
-import ca.frc4732.AerialAssist.commands.SetSolenoid;
+import ca.frc4732.AerialAssist.commands.ExtendPiston;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -34,6 +34,6 @@ public class Piston extends Subsystem {
     }
     
     public void initDefaultCommand() {
-        setDefaultCommand(new SetSolenoid(false));
+        setDefaultCommand(new ExtendPiston(false));
     }
 }

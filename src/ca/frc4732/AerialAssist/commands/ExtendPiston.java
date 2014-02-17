@@ -9,11 +9,11 @@ package ca.frc4732.AerialAssist.commands;
  *
  * @author Developer
  */
-public class SetSolenoid extends CommandBase {
+public class ExtendPiston extends CommandBase {
     
     private boolean state;
     
-    public SetSolenoid(boolean state) {
+    public ExtendPiston(boolean state) {
         // Use requires() here to declare subsystem dependencies
         this.state = state;
         requires(piston);

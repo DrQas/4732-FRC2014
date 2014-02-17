@@ -1,7 +1,7 @@
 
 package ca.frc4732.AerialAssist;
 
-import ca.frc4732.AerialAssist.commands.SetSolenoid;
+import ca.frc4732.AerialAssist.commands.ExtendPiston;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
