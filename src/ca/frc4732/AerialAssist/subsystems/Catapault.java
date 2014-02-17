@@ -6,6 +6,7 @@
 package ca.frc4732.AerialAssist.subsystems;
 
 import ca.frc4732.AerialAssist.RobotMap;
+import ca.frc4732.AerialAssist.commands.WindWinch;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -24,6 +25,10 @@ public class Catapault extends Subsystem {
     }
 
     public void initDefaultCommand() {
-        
+        setDefaultCommand(new WindWinch(false));
+    }
+    
+    public void setMotor(double x) {
+        winchMotor.set(-x);
     }
 }

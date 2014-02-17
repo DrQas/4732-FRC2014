@@ -7,32 +7,28 @@ package ca.frc4732.AerialAssist.commands;
 
 /**
  *
- * @author qasim
+ * @author Developer
  */
-
-public class AutoDrive extends CommandBase {
+public class SetSolenoid extends CommandBase {
     
-    int direction;
-    double motorSpeed;
-    int duration;
+    private boolean state;
     
-    public AutoDrive(int direction, int duration, double motorSpeed) {
-        //Set local variables
-        this.direction = direction;
-        this.motorSpeed = motorSpeed;
-        this.duration = duration;
-        
+    public SetSolenoid(boolean state) {
         // Use requires() here to declare subsystem dependencies
-        requires(driveTrain);
+        this.state = state;
+        requires(pneumatics);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        
+        pneumatics.setSolenoid(state);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        if(pneumatics.getSolenoidState() != this.state) {
+            pneumatics.setSolenoid(state);
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -42,10 +38,12 @@ public class AutoDrive extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
+        pneumatics.setSolenoid(false);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        end();
     }
 }

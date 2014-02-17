@@ -5,33 +5,51 @@
  */
 package ca.frc4732.AerialAssist.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author qasim
  */
-public class RunCompressor extends CommandBase {
+public class SetCompressor extends CommandBase {
     
-    public RunCompressor() {
+    private boolean status;
+    
+    public SetCompressor(boolean status) {
+        this.status = status;
         // Use requires() here to declare subsystem dependencies
         requires(pneumatics);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        pneumatics.startCompressor();
+        if(status) {
+            pneumatics.startCompressor();
+        } else {
+            pneumatics.stopCompressor();
+        }
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        if(status) {
+            pneumatics.startCompressor();
+        } else {
+            pneumatics.stopCompressor();
+        }
+        SmartDashboard.putBoolean("Compressor", pneumatics.getCompressorStatus());
+        SmartDashboard.putBoolean("Pressure Switch", pneumatics.getPressureSwitchValue());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
+        //pneumatics.stopCompressor();
         return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+        pneumatics.stopCompressor();
     }
 
     // Called when another command which requires one or more of the same

@@ -5,34 +5,37 @@
  */
 package ca.frc4732.AerialAssist.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
- * @author qasim
+ * @author Developer
  */
-
-public class AutoDrive extends CommandBase {
-    
-    int direction;
-    double motorSpeed;
-    int duration;
-    
-    public AutoDrive(int direction, int duration, double motorSpeed) {
-        //Set local variables
-        this.direction = direction;
-        this.motorSpeed = motorSpeed;
-        this.duration = duration;
-        
+public class WindWinch extends CommandBase {
+    private boolean status;
+    public WindWinch(boolean status) {
+        this.status = status;
         // Use requires() here to declare subsystem dependencies
-        requires(driveTrain);
+        requires(catapault);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        
+        if(status) {
+            catapault.setMotor(1.0);
+        } else {
+            catapault.setMotor(0.0);
+        }
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        if(status) {
+            catapault.setMotor(1.0);
+        } else {
+            catapault.setMotor(0.0);
+        }
+        SmartDashboard.putNumber("Winch motor", 1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -42,10 +45,13 @@ public class AutoDrive extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
+        catapault.setMotor(0.0);
+        SmartDashboard.putNumber("Winch motor", 0.0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        end();
     }
 }

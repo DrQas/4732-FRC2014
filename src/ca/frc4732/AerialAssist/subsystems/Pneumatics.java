@@ -6,7 +6,7 @@
 package ca.frc4732.AerialAssist.subsystems;
 
 import ca.frc4732.AerialAssist.RobotMap;
-import ca.frc4732.AerialAssist.commands.RunCompressor;
+import ca.frc4732.AerialAssist.commands.SetCompressor;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,18 +21,44 @@ public class Pneumatics extends Subsystem {
     
     Compressor compressor;
     Solenoid s1;
+    Solenoid s2;
     
     public Pneumatics() {
         compressor = new Compressor(
                 RobotMap.COMPRESSOR.DIGITAL_IO, RobotMap.COMPRESSOR.RELAY);
+        s1 = new Solenoid(1);
+        s2 = new Solenoid(2);
+        
+        this.setSolenoid(true);
     }
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        setDefaultCommand(new RunCompressor());
+        setDefaultCommand(new SetCompressor(false));
+    }
+    
+    public void setSolenoid(boolean state) {
+        s1.set(state);
+        s2.set(!state);
+    }
+    
+    public boolean getSolenoidState() {
+        return s1.get();
     }
     
     public void startCompressor() {
         compressor.start();
+    }
+    
+    public void stopCompressor() {
+        compressor.stop();
+    }
+    
+    public boolean getCompressorStatus() {
+        return compressor.enabled();
+    }
+    
+    public boolean getPressureSwitchValue() {
+        return compressor.getPressureSwitchValue();
     }
 }
