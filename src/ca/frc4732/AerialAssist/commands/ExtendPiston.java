@@ -5,6 +5,8 @@
  */
 package ca.frc4732.AerialAssist.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author Developer
@@ -28,6 +30,7 @@ public class ExtendPiston extends CommandBase {
     protected void execute() {
         if(piston.getSolenoidState() != this.state) {
             piston.setSolenoid(state);
+            SmartDashboard.putBoolean("Piston State", state);
         }
     }
 
@@ -39,6 +42,7 @@ public class ExtendPiston extends CommandBase {
     // Called once after isFinished returns true
     protected void end() {
         piston.setSolenoid(false);
+        SmartDashboard.putBoolean("Piston State", false);
     }
 
     // Called when another command which requires one or more of the same

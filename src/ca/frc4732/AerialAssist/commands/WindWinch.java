@@ -23,8 +23,10 @@ public class WindWinch extends CommandBase {
     protected void initialize() {
         if(status) {
             catapault.setMotor(1.0);
+            SmartDashboard.putNumber("Winch Motor", 1.0);
         } else {
             catapault.setMotor(-1.0);
+            SmartDashboard.putNumber("Winch Motor", -1.0);
         }
     }
 
@@ -32,10 +34,11 @@ public class WindWinch extends CommandBase {
     protected void execute() {
         if(status) {
             catapault.setMotor(1.0);
+            SmartDashboard.putNumber("Winch Motor", 1.0);
         } else {
             catapault.setMotor(-1.0);
+            SmartDashboard.putNumber("Winch Motor", -1.0);
         }
-        SmartDashboard.putNumber("Winch motor", 1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

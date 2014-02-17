@@ -28,6 +28,8 @@ public class SetCompressor extends CommandBase {
         } else {
             pneumatics.stopCompressor();
         }
+        SmartDashboard.putBoolean("Compressor Enabled", pneumatics.getCompressorStatus());
+        SmartDashboard.putBoolean("Pressure Switch", pneumatics.getPressureSwitchValue());
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -37,7 +39,7 @@ public class SetCompressor extends CommandBase {
         } else {
             pneumatics.stopCompressor();
         }
-        SmartDashboard.putBoolean("Compressor", pneumatics.getCompressorStatus());
+        SmartDashboard.putBoolean("Compressor Enabled", pneumatics.getCompressorStatus());
         SmartDashboard.putBoolean("Pressure Switch", pneumatics.getPressureSwitchValue());
     }
 
@@ -50,6 +52,8 @@ public class SetCompressor extends CommandBase {
     // Called once after isFinished returns true
     protected void end() {
         pneumatics.stopCompressor();
+        SmartDashboard.putBoolean("Compressor Enabled", pneumatics.getCompressorStatus());
+        SmartDashboard.putBoolean("Pressure Switch", pneumatics.getPressureSwitchValue());
     }
 
     // Called when another command which requires one or more of the same
