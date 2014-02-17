@@ -28,13 +28,13 @@ public abstract class CommandBase extends Command {
         // news. Don't move it
         oi = new OI();
         
-        oi.driveControllerX.toggleWhenPressed(new SetCompressor(true));
+        oi.altControllerX.toggleWhenPressed(new SetCompressor(true));
         
-        oi.driveControllerY.toggleWhenPressed(new ExtendPiston(true));
+        oi.altControllerY.toggleWhenPressed(new ExtendPiston(true));
         
-        oi.driveControllerStart.toggleWhenPressed(new WindWinch(true));
+        oi.altControllerStart.toggleWhenPressed(new WindWinch(true));
         
-        oi.driveControllerSelect.toggleWhenPressed(new WindWinch(false));
+        oi.altControllerSelect.toggleWhenPressed(new WindWinch(false));
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(driveTrain);

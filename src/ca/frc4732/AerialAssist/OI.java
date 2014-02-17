@@ -15,19 +15,19 @@ public class OI {
     public Joystick driveController = new Joystick(RobotMap.DRIVE_CONTROLLER);
     public Joystick altController = new Joystick(RobotMap.ALT_CONTROLLER);
     
-    public Button driveControllerX = new JoystickButton(
-            driveController, RobotMap.XBOX_CONTROLLER.X);
-    public Button driveControllerY = new JoystickButton(
-            driveController, RobotMap.XBOX_CONTROLLER.Y);
-    public Button driveControllerA = new JoystickButton(
-            driveController, RobotMap.XBOX_CONTROLLER.A);
-    public Button driveControllerB = new JoystickButton(
-            driveController, RobotMap.XBOX_CONTROLLER.B);
+    public Button altControllerX = new JoystickButton(
+            altController, RobotMap.XBOX_CONTROLLER.X);
+    public Button altControllerY = new JoystickButton(
+            altController, RobotMap.XBOX_CONTROLLER.Y);
+    public Button altControllerA = new JoystickButton(
+            altController, RobotMap.XBOX_CONTROLLER.A);
+    public Button altControllerB = new JoystickButton(
+            altController, RobotMap.XBOX_CONTROLLER.B);
     
-    public Button driveControllerSelect = new JoystickButton(driveController, 
+    public Button altControllerSelect = new JoystickButton(altController, 
             RobotMap.XBOX_CONTROLLER.SELECT);
     
-    public Button driveControllerStart = new JoystickButton(driveController, 
+    public Button altControllerStart = new JoystickButton(altController, 
             RobotMap.XBOX_CONTROLLER.START);
     
     public double getMoveAxis() {
