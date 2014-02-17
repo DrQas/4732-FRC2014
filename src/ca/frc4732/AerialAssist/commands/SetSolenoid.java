@@ -16,18 +16,18 @@ public class SetSolenoid extends CommandBase {
     public SetSolenoid(boolean state) {
         // Use requires() here to declare subsystem dependencies
         this.state = state;
-        requires(pneumatics);
+        requires(piston);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        pneumatics.setSolenoid(state);
+        piston.setSolenoid(state);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(pneumatics.getSolenoidState() != this.state) {
-            pneumatics.setSolenoid(state);
+        if(piston.getSolenoidState() != this.state) {
+            piston.setSolenoid(state);
         }
     }
 
@@ -38,7 +38,7 @@ public class SetSolenoid extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        pneumatics.setSolenoid(false);
+        piston.setSolenoid(false);
     }
 
     // Called when another command which requires one or more of the same

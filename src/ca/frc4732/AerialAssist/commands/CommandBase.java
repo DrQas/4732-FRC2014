@@ -3,9 +3,7 @@ package ca.frc4732.AerialAssist.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import ca.frc4732.AerialAssist.OI;
-import ca.frc4732.AerialAssist.subsystems.Catapault;
-import ca.frc4732.AerialAssist.subsystems.DriveTrain;
-import ca.frc4732.AerialAssist.subsystems.Pneumatics;
+import ca.frc4732.AerialAssist.subsystems.*;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -19,6 +17,7 @@ public abstract class CommandBase extends Command {
     // Create a single static instance of all of your subsystems
     public static DriveTrain driveTrain = new DriveTrain();
     public static Pneumatics pneumatics = new Pneumatics();
+    public static Piston piston = new Piston();
     public static Catapault catapault = new Catapault();
 
     public static void init() {
