@@ -34,7 +34,7 @@ public abstract class CommandBase extends Command {
         
         oi.altControllerStart.toggleWhenPressed(new WindWinch(true));
         
-        oi.altControllerSelect.toggleWhenPressed(new WindWinch(false));
+        oi.altControllerSelect.toggleWhenPressed(new UnwindWinch(true));
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(driveTrain);

@@ -16,11 +16,10 @@ public class AutoDrive extends CommandBase {
     double motorSpeed;
     int duration;
     
-    public AutoDrive(int direction, int duration, double motorSpeed) {
+    public AutoDrive(int direction, double motorSpeed) {
         //Set local variables
         this.direction = direction;
         this.motorSpeed = motorSpeed;
-        this.duration = duration;
         
         // Use requires() here to declare subsystem dependencies
         requires(driveTrain);
@@ -33,6 +32,7 @@ public class AutoDrive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        driveTrain.moveRobot(direction, motorSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

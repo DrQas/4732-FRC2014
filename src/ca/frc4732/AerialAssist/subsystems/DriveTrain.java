@@ -36,5 +36,10 @@ public class DriveTrain extends Subsystem {
     public void arcadeDrive(double moveAxis, double rotateAxis) {
         drive.arcadeDrive(-moveAxis, -rotateAxis);
     }
+    
+    public void moveRobot(int direction, double motorSpeed) {
+        leftMotor.set(0.5);
+        rightMotor.set(0.5);
+    }
    
 }

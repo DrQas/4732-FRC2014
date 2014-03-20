@@ -11,9 +11,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  * @author Developer
  */
-public class WindWinch extends CommandBase {
+public class UnwindWinch extends CommandBase {
+    
     private boolean status;
-    public WindWinch(boolean status) {
+    
+    public UnwindWinch(boolean status) {
         this.status = status;
         // Use requires() here to declare subsystem dependencies
         requires(catapault);
@@ -22,7 +24,7 @@ public class WindWinch extends CommandBase {
     // Called just before this Command runs the first time
     protected void initialize() {
         if(status) {
-            catapault.setMotor(1.0);
+            catapault.setMotor(-1.0);
             SmartDashboard.putNumber("Winch Motor", 1.0);
         } else {
             catapault.setMotor(0.0);
@@ -33,7 +35,7 @@ public class WindWinch extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if(status) {
-            catapault.setMotor(1.0);
+            catapault.setMotor(-1.0);
             SmartDashboard.putNumber("Winch Motor", 1.0);
         } else {
             catapault.setMotor(0.0);

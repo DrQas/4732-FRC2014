@@ -5,6 +5,7 @@
  */
 package ca.frc4732.AerialAssist.commands;
 
+import ca.frc4732.AerialAssist.RobotMap;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -14,6 +15,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
     public Autonomous() {
-        
+        this.addParallel(new WindWinch(true));
+        this.addSequential(new AutoDrive(RobotMap.DIRECTION.LEFT, 0.25), 3);
+        this.addSequential(new AutoDrive(RobotMap.DIRECTION.LEFT, 0.25), 2);
     }
 }

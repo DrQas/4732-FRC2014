@@ -7,11 +7,13 @@
 
 package ca.frc4732.AerialAssist;
 
+import ca.frc4732.AerialAssist.commands.Autonomous;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import ca.frc4732.AerialAssist.commands.CommandBase;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,7 +24,7 @@ import ca.frc4732.AerialAssist.commands.CommandBase;
  */
 public class Main extends IterativeRobot {
 
-    //Command autonomousCommand;
+    CommandGroup autonomousCommandGroup;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -30,7 +32,7 @@ public class Main extends IterativeRobot {
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        //autonomousCommand = new ExampleCommand();
+        autonomousCommandGroup = new Autonomous();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -38,7 +40,7 @@ public class Main extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        //autonomousCommand.start();
+        autonomousCommandGroup.start();
     }
 
     /**
