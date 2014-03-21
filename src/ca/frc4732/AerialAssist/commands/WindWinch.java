@@ -21,7 +21,7 @@ public class WindWinch extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        if(status) {
+        if(status && catapault.isSwitchOn()) {
             catapault.setMotor(1.0);
             SmartDashboard.putNumber("Winch Motor", 1.0);
         } else {
@@ -32,7 +32,7 @@ public class WindWinch extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(status) {
+        if(status && catapault.isSwitchOn()) {
             catapault.setMotor(1.0);
             SmartDashboard.putNumber("Winch Motor", 1.0);
         } else {
@@ -43,7 +43,11 @@ public class WindWinch extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        if(!catapault.isSwitchOn()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // Called once after isFinished returns true
